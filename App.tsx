@@ -1,8 +1,8 @@
 
 import React, { useState, useEffect } from 'react';
-import { GameState, UserProgress, NewsItem } from './types';
-import { Card, Badge } from './components/Card';
-import { generateNewsItems } from './services/geminiService';
+import { GameState, UserProgress, NewsItem } from './types.ts';
+import { Card, Badge } from './components/Card.tsx';
+import { generateNewsItems } from './services/geminiService.ts';
 
 const App: React.FC = () => {
   const [state, setState] = useState<GameState>(GameState.WELCOME);
@@ -362,8 +362,6 @@ const ResultsScreen: React.FC<{ progress: UserProgress }> = ({ progress }) => {
     </Card>
   );
 };
-
-// --- Printable Diploma Template ---
 
 const DiplomaPrintable: React.FC<{ progress: UserProgress }> = ({ progress }) => {
   const name = localStorage.getItem('kallkollen_name') || 'Deltagare';
